@@ -81,7 +81,7 @@ function updateDisplay() {
 
 // Function to generate alphabet buttons
 function generateAlphabetButtons() {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXZ";
   let buttonsHTML = "";
 
   for (let letter of alphabet) {
