@@ -34,16 +34,13 @@ const sortedItems = items.slice().sort((a, b) => a.price - b.price);
 document.getElementById('result4').textContent = sortedItems.map(item => item.name).join(", ");
 
 const cucumberDetails = items.find(item => item.name === "Cucumber");
-if (cucumberDetails) {
-  document.getElementById('result5').textContent = `{ Name: ${cucumberDetails.name}, Category: ${cucumberDetails.category}, Price: $${cucumberDetails.price.toFixed(2)} }`;
-} 
+document.getElementById('result5').textContent = `{ Name: ${cucumberDetails.name}, Category: ${cucumberDetails.category}, Price: $${cucumberDetails.price.toFixed(2)} }`;
 
 const totalFruitPrice = fruits.reduce((accumulator, currentItem) => accumulator + currentItem.price, 0);
 document.getElementById('result6').textContent = ` $${totalFruitPrice.toFixed(2)}`;
 
 const cheapestFruit = fruits.reduce((minPriceItem, currentItem) => (currentItem.price < minPriceItem.price ? currentItem : minPriceItem), fruits[0]);
 document.getElementById('result7').textContent = ` ${cheapestFruit.name} : $${cheapestFruit.price.toFixed(2)}  `;
-
 
 const sortedFruits = fruits.slice().sort((a, b) => a.name.localeCompare(b.name));
 const fruitsInfo = sortedFruits.map(fruit => ` ${fruit.name}: $${fruit.price.toFixed(2)} `).join(" , ");
